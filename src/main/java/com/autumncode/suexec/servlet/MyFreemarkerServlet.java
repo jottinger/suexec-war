@@ -2,7 +2,6 @@ package com.autumncode.suexec.servlet;
 
 import freemarker.ext.servlet.FreemarkerServlet;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 
@@ -21,8 +20,4 @@ import javax.servlet.annotation.WebServlet;
         @WebInitParam(name="number_format", value="0.########"),
 })
 public class MyFreemarkerServlet extends FreemarkerServlet {
-    @PostConstruct
-    void initServlet() {
-        System.out.println("MyFreemarkerServlet done");
-    }
 }

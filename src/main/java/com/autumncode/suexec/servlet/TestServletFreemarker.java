@@ -1,7 +1,6 @@
 package com.autumncode.suexec.servlet;
 
 import com.autumncode.suexec.ejb.MyEJB;
-import com.github.jknack.handlebars.Handlebars;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -20,14 +19,12 @@ public class TestServletFreemarker extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Handlebars handlebars = new Handlebars();
-
         req.setAttribute("when", new Date());
         req.setAttribute("ejb", ejb);
         req.setAttribute("invocation", ejb.greet());
 
         String path = "/testservletfreemarker.ftl";
-        System.out.println("forwarding to " + path);
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
 
         dispatcher.forward(req, resp);
