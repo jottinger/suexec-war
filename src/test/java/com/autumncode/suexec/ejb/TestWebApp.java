@@ -31,7 +31,9 @@ public class TestWebApp {
     private WebElement greeting;
 
     @Drone
+    private
     WebDriver browser;
+
     @ArquillianResource
     private URL deploymentUrl;
 
@@ -46,6 +48,11 @@ public class TestWebApp {
     public void testHandlebars() {
         browser.get(deploymentUrl.toExternalForm()+"servlet");
         Assert.assertEquals(greeting.getText(), "Hello, world");
+    }
 
+    @Test
+    public void testJSP() {
+        browser.get(deploymentUrl.toExternalForm()+"test.jsp");
+        Assert.assertEquals(greeting.getText(), "Hello, world");
     }
 }

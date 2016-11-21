@@ -20,7 +20,7 @@ This is a test JSP file.
 
 <p>The looked up EJB ref: <%= jndiEJB %></p>
 
-<p>Calling the looked up ref: <%= jndiEJB.greet() %></p>
+<p>Calling the looked up ref:<span id="greeting"><%= jndiEJB.greet() %></span></p>
 
 <p>The time is: <%= new Date() %></p>
 </body>
