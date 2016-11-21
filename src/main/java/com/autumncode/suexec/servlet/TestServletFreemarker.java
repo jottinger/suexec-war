@@ -22,6 +22,7 @@ public class TestServletFreemarker extends HttpServlet {
         req.setAttribute("when", new Date());
         req.setAttribute("ejb", ejb);
         req.setAttribute("invocation", ejb.greet());
+        req.setAttribute("cp", req.getContextPath());
 
         String path = "/testservletfreemarker.ftl";
 
