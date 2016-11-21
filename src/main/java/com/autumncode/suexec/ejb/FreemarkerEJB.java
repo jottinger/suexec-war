@@ -16,10 +16,6 @@ public class FreemarkerEJB {
     void init() {
         configuration = new Configuration(Configuration.VERSION_2_3_25);
 
-// Specify the source where the template files come from. Here I set a
-// plain directory for it, but non-file-system sources are possible too:
-        //cfg.setDirectoryForTemplateLoading(new File("/where/you/store/templates"));
-
         configuration.setClassLoaderForTemplateLoading(this.getClass().getClassLoader(), "/");
 
         configuration.setDefaultEncoding("UTF-8");
